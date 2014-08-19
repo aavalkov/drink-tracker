@@ -3,6 +3,18 @@
 <p>Enter a new reason:</p>
 <form action= "/reasons" method="post">
   <label for = "description">Description</label>
-  <input id ="description" description = "description" type = "text">
+  <input id ="description" name = "description" type = "text">
   <button>Add Reason!</button>
 </form>
+
+<h2>Reasons</h2>
+
+<ul>
+  <% @reasons.each do |reason| %>
+    <li><%= reason.description %> <a href ="/reasons/<%= reason.id %>" data-confrim="Are you sure you don't want to drink it again?"
+      data-method = "delete"
+      rel="nofollow"> DRANK IT!</a></li>
+  <% end %>
+</ul>
+
+

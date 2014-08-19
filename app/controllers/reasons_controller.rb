@@ -1,10 +1,20 @@
 class ReasonsController < ApplicationController
-  # def index
-  #   @reasons = Reasons.all
-  #   render('reasons/index.html.erb')
-  # end
+  def index
+    @reasons = Reason.all
+    @new_reason = Reason.new
+    render('reasons/index.html.erb')
+  end
+
   def create
-    @reason = Reason.create(:description => params[:description])
+    @reasons = Reason.all
+    @new_reason = Reason.create(:description => params[:description])
+    render('reasons/index.html.erb')
+  end
+
+  def destroy
+    @reasons = Reason.all
+    @reason = Reason.find(params[:id])
+    @reason.destroy
     render('reasons/index.html.erb')
   end
 end
