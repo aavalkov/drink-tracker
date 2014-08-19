@@ -1,4 +1,4 @@
-#Wikipages
+#DRINK UP!
 
 ##Authors
 [Anna Valkov] (https://github.com/aavalkov) and [Nick Bernard] (https://github.com/nrbernard)
