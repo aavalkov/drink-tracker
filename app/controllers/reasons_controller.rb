@@ -24,4 +24,6 @@ class ReasonsController < ApplicationController
     @reason.update(:done => true)
     render('reasons/index.html.erb')
   end
+
+
 end

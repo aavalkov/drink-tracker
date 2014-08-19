@@ -9,14 +9,22 @@
 
 <h2>Reasons</h2>
 
+<h3>I want to drink because:</h3>
 <ul>
-  <% @reasons.each do |reason| %>
+  <% @reasons.not_drank.each do |reason| %>
     <li><%= reason.description %> <a href ="/reasons/<%= reason.id %>" data-confrim="Are you sure you don't want to drink it again?" data-method = "delete" rel="nofollow">Bad reason!</a>
     <form action="/reasons/<%= reason.id %>" method="post">
       <input name="_method" type="hidden" value="patch">
       <input name="reason[done]" type="hidden" value="true">
       <button>Mark DRANK</button>
     </form></li>
+  <% end %>
+</ul>
+
+<h3>I drank because:</h3>
+<ul>
+  <% @reasons.drank.each do |reason| %>
+    <li><%= reason.description %></li>
   <% end %>
 </ul>
 
